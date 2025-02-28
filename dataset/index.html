@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescription OCR</title>
+</head>
+<body>
+
+    <input type="file" id="imageInput">
+    <button onclick="uploadImage()">Extract Prescription</button>
+
+    <h3>Extracted Data:</h3>
+    <div id="result"></div>  <!-- Table will be inserted here -->
+
+    <script>
+        function uploadImage() {
+            let fileInput = document.getElementById("imageInput").files[0];
+            let formData = new FormData();
+            formData.append("image", fileInput);
+
+            fetch("http://127.0.0.1:5000/predict", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log("API Response:", data);
+
+                if (data.table) {
+                    let tableHTML = "<table border='1'><tr><th>Field</th><th>Value</th></tr>";
+                    data.table.forEach(row => {
+                        tableHTML += `<tr><td>${row.Field}</td><td>${row.Value}</td></tr>`;
+                    });
+                    tableHTML += "</table>";
+                    document.getElementById("result").innerHTML = tableHTML;
+                } else {
+                    document.getElementById("result").innerHTML = "<p>No data extracted.</p>";
+                }
+            })
+            .catch(error => console.error("Fetch Error:", error));
+        }
+    </script>
+
+</body>
+</html>
+
