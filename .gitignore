@@ -1,0 +1,74 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore virtual environments
+venv/
+.env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore dataset and large files
+dataset/
+data/
+*.csv
+*.json
+*.xml
+*.tsv
+*.zip
+*.tar.gz
+*.h5
+*.hdf5
+*.npy
+*.npz
+
+# Ignore logs and output files
+logs/
+*.log
+*.out
+
+# Ignore model weights and checkpoints
+checkpoints/
+saved_models/
+*.ckpt
+*.h5
+*.pth
+*.pt
+
+# Ignore TensorBoard logs
+tb_logs/
+
+# Ignore VSCode settings
+.vscode/
+
+# Ignore environment and dependency files
+*.env
+*.cache
+
+# Ignore Python packaging files
+*.egg-info/
+dist/
+build/
+
+# Ignore compiled Cython files
+*.c
+*.so
+
+# Ignore temporary files
+*.tmp
+*.swp
+*.swo
+
+# Ignore Node.js dependencies (if frontend included)
+node_modules/
+
+# Ignore uploaded prescription images
+uploads/
+*.png
+*.jpg
+*.jpeg
