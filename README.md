@@ -14,7 +14,7 @@ This project is an AI-powered **handwritten prescription OCR model** that extrac
 ## 🔧 Installation & Setup
 ### **1️⃣ Clone the Repository**
 ```sh
-git clone https://github.com/YOUR_GITHUB_USERNAME/prescription_ocr.git
+git clone https://github.com/vishalllllllllll/prescription_ocr.git
 cd prescription_ocr
 ```
 
